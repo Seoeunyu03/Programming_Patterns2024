@@ -23,7 +23,7 @@ VCS는 "Version Control System"의 약자로, 소프트웨어 개발에서 코�
       CVCS는 여러사람과 작업해서 생기는 문제를 해결하기 위해 겨발되었다.
       서버가 별도로 존재하고 클라이언트가 중앙서버에서 파일을 checkout하는 방식
       중앙서버에 문제가 발생하면 치명적이다.
-      ![cvcs](./IMG.cvcs.png)
+      ![cvcs](./IMG/cvcs.png)
 
       모두가 공유할 수 있는 서버에 데이터베이스를 설치하면 버전 공유가 가능하다.
       장점은 여러 사람들 간의 문서, 문서 버전 공유 가능, 중앙 데이터베이스를 하나만 관리하면 되므로 관리가 편하고 생산성이 향상된다.
@@ -33,7 +33,7 @@ VCS는 "Version Control System"의 약자로, 소프트웨어 개발에서 코�
     * 분산 버전관리 시스템(DVCS)
       DVCS는 파일의 마지막 스낸샷을 chekout하지 않고 히스토리를 포함한 저장소를 복제한다.
       서버에 문제가 생기면 복제물로 다시 작업을 할 수 있고 서버를 복원할 수도 있다. 많은 remote 저장소를 가질 수 있기 때문에 협업이 수월하다.
-      ![dvcs](./IMG.dvcs.png)
+      ![dvcs](./IMG/dvcs.png)
 
       분산 버전 관리 시스템의 이점
       중앙 서버에 접속 문제가 발생해도 로컬에서 관리가 가능하다.
@@ -74,24 +74,24 @@ DVCS(Distributed Version Control System)와 VCS(Version Control System) 사이�
 
 git 웹사이트에 들어가 로그인 후 새로운 repository를 생성한다.
 
-![cd](./IMG.01.png)
+![cd](./IMG/01.png)
 
 cd(Change Directory) 명령어를 사용해 ReadMe.md 만들 폴더에 들어간다.
 git init라는 명령어를 사용하여 새로운 로컬 git 저장소를 초기화 한다.
 vim이라는 텍스트 편집기 명령어를 사용하여 ReadME.md 생성한다.
 
-![readme](./IMG.readme내용.png)
+![readme](./IMG/readme내용.png)
 
 vim ReadMe.md를 입력하면 위와 같은 화면이 나온다.
 i를 누르면 ReadMe.md 내용을 입력(편집)할 수 있다.
 입력이 끝났다면 esc를 누르고 wq:를 입력하면, 방금 입력한 ReadMe.md 내용을 저장하고 나갈 수 있다.
 
-![status](./IMG.02.png)
+![status](./IMG/02.png)
 
 git status 명령어를 사용하면 현재 작업 디렉토리의 상태를 확인 할 수 있다. 
 빨간색이라면 git에 업로드가 안된것이다.
 
-![commit](./IMG.03.png)
+![commit](./IMG/03.png)
 
 git add를 디렉토리의 변경 사항을 Staging Area에 추가할 수 있다.
 Staging Area는 Git의 작업 흐름에서 중요한 개념 중 하나이다. 커밋을 하기 전에 변경된 파일들의 스냅샷을 준비하는 공간으로 생각할 수 있다.
@@ -99,13 +99,13 @@ git add . 을 하면 모든 디렉토리를 선택 할 수 있다. 여기서는 
 git commit -m "커밋메시지내용입력" 을 사용하여 커밋메시지를 써준다.
 위의 내용을 다 완료하였다면 다시 git status를 사용하여 디렉토리의 상태를 확인한다. 이때는 빨간색이였던 글씨가 초록색이 되어야한다.
 
-![push](./IMG.04.png)
+![push](./IMG/04.png)
 
 git push를 하여 로컬 저장소에 있는 ReadMe.md를 원격저장소로 전송한다.
 현재 처음 push하는것 이므로 git remote add origin(원격저장소이름) 본인의 git repository 주소를 입력한다.
 git bash에서 붙여넣기는 shift + insert이다.
 
-![push](./IMG.05.png)
+![push](./IMG/05.png)
 
 git push --set-upstream origin(원격저장소이름) main(브랜치이름)을 입력한다.
 원격 저장소에 로컬 저장소의 변경 사항이 성공적으로 푸시되었고, 두 저장소가 연결이 되었다.
@@ -162,7 +162,7 @@ git push --set-upstream origin(원격저장소이름) main(브랜치이름)을 �
  '''
  Headers
  =======
- '''
+ 
 
  * 부제목
 
