@@ -70,28 +70,28 @@ DVCS(Distributed Version Control System)와 VCS(Version Control System) 사이�
 
 ------------------
 
-3. repository를 생성하고 local repository랑 연결하기
+# 3. repository를 생성하고 local repository랑 연결하기
 
 git 웹사이트에 들어가 로그인 후 새로운 repository를 생성한다.
 
-![cd](./IMG/01.png)
+![cd](./IMG/01.PNG)
 
 cd(Change Directory) 명령어를 사용해 ReadMe.md 만들 폴더에 들어간다.
 git init라는 명령어를 사용하여 새로운 로컬 git 저장소를 초기화 한다.
 vim이라는 텍스트 편집기 명령어를 사용하여 ReadME.md 생성한다.
 
-![readme](./IMG/readme내용.png)
+![readme](./IMG/readme내용.PNG)
 
 vim ReadMe.md를 입력하면 위와 같은 화면이 나온다.
 i를 누르면 ReadMe.md 내용을 입력(편집)할 수 있다.
 입력이 끝났다면 esc를 누르고 wq:를 입력하면, 방금 입력한 ReadMe.md 내용을 저장하고 나갈 수 있다.
 
-![status](./IMG/02.png)
+![status](./IMG/02.PNG)
 
 git status 명령어를 사용하면 현재 작업 디렉토리의 상태를 확인 할 수 있다. 
 빨간색이라면 git에 업로드가 안된것이다.
 
-![commit](./IMG/03.png)
+![commit](./IMG/03.PNG)
 
 git add를 디렉토리의 변경 사항을 Staging Area에 추가할 수 있다.
 Staging Area는 Git의 작업 흐름에서 중요한 개념 중 하나이다. 커밋을 하기 전에 변경된 파일들의 스냅샷을 준비하는 공간으로 생각할 수 있다.
@@ -99,13 +99,13 @@ git add . 을 하면 모든 디렉토리를 선택 할 수 있다. 여기서는 
 git commit -m "커밋메시지내용입력" 을 사용하여 커밋메시지를 써준다.
 위의 내용을 다 완료하였다면 다시 git status를 사용하여 디렉토리의 상태를 확인한다. 이때는 빨간색이였던 글씨가 초록색이 되어야한다.
 
-![push](./IMG/04.png)
+![push](./IMG/04.PNG)
 
 git push를 하여 로컬 저장소에 있는 ReadMe.md를 원격저장소로 전송한다.
 현재 처음 push하는것 이므로 git remote add origin(원격저장소이름) 본인의 git repository 주소를 입력한다.
 git bash에서 붙여넣기는 shift + insert이다.
 
-![push](./IMG/05.png)
+![push](./IMG/05.PNG)
 
 git push --set-upstream origin(원격저장소이름) main(브랜치이름)을 입력한다.
 원격 저장소에 로컬 저장소의 변경 사항이 성공적으로 푸시되었고, 두 저장소가 연결이 되었다.
@@ -160,9 +160,11 @@ git push --set-upstream origin(원격저장소이름) main(브랜치이름)을 �
  * 큰제목
 
  '''
+
  Headers
  =======
- 
+
+ '''
 
  * 부제목
 
@@ -216,7 +218,7 @@ git push --set-upstream origin(원격저장소이름) main(브랜치이름)을 �
 
 ### 4. 코드블럭
 
-<pre><code>{code}</code></pre> 또는 '''을 이용하여 사용할 수 있다.
+<pre><code> <pre><code>{code}</code></pre> 또는 '''을 이용하여 사용할 수 있다.<pre><code>
 
 <pre>
 <code>
