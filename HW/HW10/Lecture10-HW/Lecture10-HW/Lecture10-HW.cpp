@@ -26,22 +26,39 @@ void sun(float x, float y, float radius) {
     glEnd();
 }
 
-void earth(float x, float y, float size) {
-    glBegin(GL_QUADS);
-    glVertex2f(x - size / 2, y - size / 2);
-    glVertex2f(x + size / 2, y - size / 2);
-    glVertex2f(x + size / 2, y + size / 2);
-    glVertex2f(x - size / 2, y + size / 2);
+void earth(float x1, float y1, float x2, float y2 ) {
+    glBegin(GL_POLYGON);
+    glVertex2f(x1, y1);
+    glVertex2f(x2, y1);
+    glVertex2f(x2, y2);
+    glVertex2f(x1, y2);
     glEnd();
 }
 
 void star(float x, float y, float radius, int points) {
-    glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(x, y);
-    for (int i = 0; i <= points * 2; i++) {
-        float angle = PI * i / points;
-        float len = (i % 2 == 0) ? radius : radius * 0.6f;
-        glVertex2f(x + cos(angle) * len, y + sin(angle) * len);
+    float innerRadius = radius * 0.5f;
+    float angleStep = PI / points;
+
+    glBegin(GL_TRIANGLES);
+    for (int i = 0; i < points; i++) {
+        float outerAngle1 = 2 * i * angleStep;
+        float outerAngle2 = 2 * (i + 1) * angleStep;
+        float innerAngle = (2 * i + 1) * angleStep;
+
+        float x1 = x + cos(outerAngle1) * radius;
+        float y1 = y + sin(outerAngle1) * radius;
+        float x2 = x + cos(outerAngle2) * radius;
+        float y2 = y + sin(outerAngle2) * radius;
+        float xInner = x + cos(innerAngle) * innerRadius;
+        float yInner = y + sin(innerAngle) * innerRadius;
+
+        glVertex2f(x, y);         // 중심점
+        glVertex2f(x1, y1);       // 외각 점
+        glVertex2f(xInner, yInner); // 내각 점
+
+        glVertex2f(x, y);         // 중심점
+        glVertex2f(xInner, yInner); // 내각 점
+        glVertex2f(x2, y2);       // 외각 점
     }
     glEnd();
 }
@@ -94,7 +111,7 @@ int main() {
         glTranslatef(earthOrbitRadius, 0, 0);
         glRotatef(earthAngle, 0, 0, 1);
         glColor3f(0.0f, 0.0f, 1.0f);
-        earth(0, 0, screenWidth / 15); 
+        earth(0, 0, 40,40); 
         glPopMatrix();
 
         // 달
